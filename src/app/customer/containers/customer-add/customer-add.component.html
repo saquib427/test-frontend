@@ -1,0 +1,53 @@
+<div>
+    <div>
+        <form nz-form [nzLayout]="'vertical'" [formGroup]="customerDetails" (ngSubmit)="submitCustomerDetails()">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <nz-form-item>
+                                <nz-form-label nzFor="name">Name</nz-form-label>
+                                <nz-form-control nzErrorTip="Please enter name">
+                                    <input style="width: 50%;" nz-input formControlName="name" type="text"
+                                        maxlength="50" placeholder="Name">
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div class="col-lg-6">
+                            <nz-form-item>
+                                <nz-form-label nzFor="age">Age</nz-form-label>
+                                <nz-form-control nzErrorTip="Please enter age. Max value 110.">
+                                    <input style="width: 50%;" nz-input formControlName="age" type="number" min="0"
+                                        max="110" placeholder="Age">
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div class="col-lg-6">
+                            <nz-form-item>
+                                <nz-form-label nzFor="postCode">PostCode</nz-form-label>
+                                <nz-form-control
+                                    nzErrorTip="Please enter postCode. It should contain character and numbers only.">
+                                    <input style="width: 50%;" nz-input formControlName="postCode" type="text"
+                                        placeholder="PostCode">
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div class="col-lg-6">
+                            <nz-form-item>
+                                <nz-form-label nzFor="height">Height</nz-form-label>
+                                <nz-form-control nzErrorTip="Please enter height. Max value 2.5">
+                                    <input style="width: 50%;" nz-input formControlName="height" ng-model="height"
+                                        step="0.01" min="0" max="2.50" type="number" placeholder="Height">
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+                    <button nz-button nzType="primary" type="submit"
+                        [disabled]="customerDetails.invalid">Submit</button>
+                    <button style="margin-left: 6px;" nz-button nzType="default" type="button"
+                        (click)="onCancel()">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

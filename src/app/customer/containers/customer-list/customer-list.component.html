@@ -1,0 +1,42 @@
+<div>
+
+    <div style="background: #ECECEC;padding:30px;">
+        <nz-card style="width:100%;" [nzBordered]="false" nzTitle="Customer List">
+
+            <div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div>
+                            <button style="margin-bottom: 6px;" nz-button nzType="default" type="button" (click)="onAddCustomer()">Add
+                                Customer</button>
+                        </div>
+                    </div>
+                </div>
+                <nz-table #basicTable [nzData]="listOfData" [nzFrontPagination]="false">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>PostCode</th>
+                            <th>Height(meters)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of basicTable.data">
+                            <td>{{item.name}}</td>
+                            <td>{{item.age}}</td>
+                            <td>{{item.postCode}}</td>
+                            <td>{{item.height}}</td>
+                            <td>
+                                <button nz-button class="mr-1" nzSize="small" (click)="onEdit(item)"><i nz-icon
+                                        nzType="edit" theme="outline"></i>
+                                    Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </nz-card>
+    </div>
+</div>
